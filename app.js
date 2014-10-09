@@ -4,6 +4,7 @@ app.controller('ctrl_index', ['$scope',  // Controller for index page
   function ($scope) {
       $scope.screen='0';
       $scope.temp=0;
+      var op_list=['+','-','*','/'];
       var op;
       var screen_num=0;
       var len=0;
@@ -37,6 +38,7 @@ app.controller('ctrl_index', ['$scope',  // Controller for index page
         $scope.dot=0;  
         done=0;
         len=0;
+        $scope.op_display='';
       }
       $scope.back=function(){
             $scope.screen=$scope.screen.substring(0, $scope.screen.length-1);
@@ -45,21 +47,28 @@ app.controller('ctrl_index', ['$scope',  // Controller for index page
 
       }    
       $scope.operation=function(n){
-          screen_num=Number($scope.screen);
-          if($scope.temp==0){
-            op=n;  
-            $scope.temp=screen_num;
-            $scope.screen='';    
-          }
+          if($scope.screen=='0' && n==2)
+            $scope.screen='-';
           else{
-            $scope.equal();
-            op=n;  
-            $scope.temp=Number($scope.screen);    
+            screen_num=Number($scope.screen);
+            $scope.op_display=op_list[n-1];
+            if($scope.temp==0){
+              op=n;  
+                  
+              $scope.temp=screen_num;
+              $scope.screen='';    
+            }
+            else{
+              $scope.equal();
+              op=n;  
+              $scope.temp=Number($scope.screen);    
+            }
           }
         
         
       }
       $scope.equal=function(){
+          $scope.op_display='';
           screen_num=Number($scope.screen);
           //console.log($scope.temp);
           //console.log(op);
