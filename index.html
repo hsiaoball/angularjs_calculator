@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html ng-app="app">
+
+<head>
+    <meta charset="utf-8" /> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="app.css" rel="stylesheet">
+    <title>Endgame-Calculator</title>
+    
+</head>
+<style>
+
+</style>
+
+<body>
+
+<div ng-controller="ctrl_index" id="calculator">
+    <div id="display">
+    {{screen}}
+    </div>
+    <div id="buttoms">
+    <div class="buttom_row">    
+        <div class="buttom" ng-click="num(7)">7</div>
+        <div class="buttom" ng-click="num(8)">8</div>
+        <div class="buttom" ng-click="num(9)">9</div>
+        <div class="buttom" ng-click="operation(1)">+</div>    
+        <div class="buttom" ng-click="clear()">c</div>        
+    </div>    
+        <div class="buttom_row">
+        <div class="buttom" ng-click="num(4)">4</div>
+        <div class="buttom" ng-click="num(5)">5</div>
+        <div class="buttom" ng-click="num(6)">6</div>
+        <div class="buttom" ng-click="operation(2)">-</div>  
+        <div class="buttom" ng-click="back()">&#8592;</div> 
+    </div>
+    <div class="buttom_row">
+        <div class="buttom" ng-click="num(1)">1</div>
+        <div class="buttom" ng-click="num(2)">2</div>
+        <div class="buttom" ng-click="num(3)">3</div>
+        <div class="buttom" ng-click="operation(3)">*</div>
+        <div class="buttom double_h" ng-click="equal()"><br>=</div>
+    </div>       
+        <div class="buttom_row bottom_row">    
+        <div class="buttom double_w" ng-click="num(0)">0</div>
+        <div class="buttom" ng-click="do_dot()">.</div>    
+        <div class="buttom" ng-click="operation(4)">/</div  >
+    </div>  
+    </div>        
+    
+
+  
+    <br>
+    
+    
+</div>    
+
+    <script type="text/javascript" src="angular.min.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+ 
+</body>
+
+</html>
