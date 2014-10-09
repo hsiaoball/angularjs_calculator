@@ -23,7 +23,7 @@ app.controller('ctrl_index', ['$scope',  // Controller for index page
         len+=1;
         if(done==1 || $scope.screen=='0'){
             $scope.screen=n.toString();
-            console.log($scope.screen);
+            //console.log($scope.screen);
             done=0;
         }else{
             $scope.screen=$scope.screen.concat(n.toString());
@@ -54,7 +54,7 @@ app.controller('ctrl_index', ['$scope',  // Controller for index page
           else{
             $scope.equal();
             op=n;  
-            $scope.temp=$scope.screen;    
+            $scope.temp=Number($scope.screen);    
           }
         
         
@@ -62,8 +62,8 @@ app.controller('ctrl_index', ['$scope',  // Controller for index page
       $scope.equal=function(){
           screen_num=Number($scope.screen);
           //console.log($scope.temp);
-          console.log(op);
-          //console.log($scope.screen);
+          //console.log(op);
+          //console.log(screen_num);
             switch(op) {
                 case 1:
                     $scope.temp+=screen_num;
